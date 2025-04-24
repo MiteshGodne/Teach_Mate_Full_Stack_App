@@ -13,7 +13,7 @@ from .utils.video_creator import create_video_from_images_and_audio
 
 
 app = FastAPI()
-origins = [ "https://teach-mate-full-stack-app.vercel.app", "https://teach-mate-full-stack-app-git-main-mitesh-s-projects-e14a0d4f.vercel.app/", "https://vercel.com/mitesh-s-projects-e14a0d4f/teach-mate-full-stack-app/GDvzBjzCLx2UYhHDwop6Ej2PEkGQ" ]
+origins = ["https://teach-mate-full-stack-app.vercel.app"],
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,  # React frontend
