@@ -1,0 +1,95 @@
+
+/* src/styles.css */
+.upload-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .upload-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4a90e2;
+  }
+  
+  .drag-drop-area {
+    width: 600px;
+    height: 300px;
+    border: 2px dashed #4a90e2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    position: relative;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .drag-drop-area p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  .drag-drop-area.active {
+    background-color: #e3f2fd;
+  }
+  
+  .file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .upload-button,
+  .remove-button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .upload-button:hover,
+  .remove-button:hover {
+    background-color: #357ab9;
+  }
+  
+  .upload-button:disabled,
+  .remove-button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+  }
+  
+  .progress-bar {
+    width: 400px;
+    height: 20px;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #4a90e2;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+  }
+  
