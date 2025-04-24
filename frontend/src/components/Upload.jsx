@@ -52,7 +52,7 @@ const Upload = () => {
     setIsUploaded(false); // Reset uploaded state
 
     try {
-      const response = await axios.post("https://teach-mate-full-stack-app.vercel.app/upload",
+      const response = await axios.post("https://teach-mate-backend-e645.onrender.com/upload/",
         formData,
         {
           headers: {
