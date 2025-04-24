@@ -26,24 +26,26 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-UPLOAD_FOLDER = "uploads"
+UPLOAD_FOLDER = "tmp/uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.post("/upload")
 @app.post("/upload/")
 async def upload_ppt(file: UploadFile = File(...)):
-    file_id = str(uuid.uuid4())
-    ppt_path = os.path.join(UPLOAD_FOLDER, f"{file_id}.pptx")
+    try:
+        file_id = str(uuid.uuid4())
+        ppt_path = os.path.join(UPLOAD_FOLDER, f"{file_id}.pptx")
 
-    with open(ppt_path, "wb") as buffer:
-        shutil.copyfileobj(file.file, buffer)
+        with open(ppt_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
 
-    slides_content = extract_ppt_content(ppt_path)
-    audio_files = generate_audio_files(slides_content, file_id)
-    slide_image_files = convert_pptx_to_images(ppt_path, file_id)
-    video_path = create_video_from_images_and_audio(slide_image_files, audio_files, file_id)
+        slides_content = extract_ppt_content(ppt_path)
+        audio_files = generate_audio_files(slides_content, file_id)
+        slide_image_files = convert_pptx_to_images(ppt_path, file_id)
+        video_path = create_video_from_images_and_audio(slide_image_files, audio_files, file_id)
 
-    return FileResponse(video_path, media_type="video/mp4", filename="lecture.mp4")
+        return FileResponse(video_path, media_type="video/mp4", filename="lecture.mp4")
 
-
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
 
