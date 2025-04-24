@@ -1,6 +1,11 @@
 bcrypt==4.0.1
-cryptography
+cryptography>3.3.1
 fastapi
+aspose.slides
+pyopenssl
+python-pptx
+gtts
+moviepy
 psycopg2-binary
 PyMySQL
 python-jose
@@ -13,10 +18,5 @@ httpx
 pytest-asyncio
 a
 jinja2
-python-pptx
-gtts
-moviepy
 aiofiles
-aspose.slides
-pyopenssl
 pydantic
