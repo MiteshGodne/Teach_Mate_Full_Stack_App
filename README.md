@@ -1,1 +1,2 @@
-# Teach Mate\n\nAutomated instructor tool built with React and FastAPI.
+# Teach Mate
+# Automated instructor tool built with React and FastAPI.
