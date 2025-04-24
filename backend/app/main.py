@@ -29,6 +29,7 @@ app.add_middleware(
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
+@app.post("/upload")
 @app.post("/upload/")
 async def upload_ppt(file: UploadFile = File(...)):
     file_id = str(uuid.uuid4())
