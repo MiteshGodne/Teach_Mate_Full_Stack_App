@@ -6,10 +6,10 @@ import shutil
 import os
 import uuid
 
-from .utils.ppt_convertor import convert_pptx_to_images
-from .utils.ppt_parser import extract_ppt_content
-from .utils.audio_generator import generate_audio_files
-from .utils.video_creator import create_video_from_images_and_audio
+from app.utils.ppt_convertor import convert_pptx_to_images
+from app.utils.ppt_parser import extract_ppt_content
+from app.utils.audio_generator import generate_audio_files
+from app.utils.video_creator import create_video_from_images_and_audio
 
 
 app = FastAPI()
