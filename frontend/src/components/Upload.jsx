@@ -2,6 +2,8 @@ import "../css/Upload.css";
 import { useState } from "react";
 import axios from "axios";
 
+const apiBaseFrontendUrl = import.meta.env.VITE_API_URL;
+
 const Upload = () => {
   const [file, setFile] = useState(null);
   const [dragActive, setDragActive] = useState(false);
@@ -53,7 +55,7 @@ const Upload = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/upload/",
+        `${apiBaseFrontendUrl}/upload`,
         formData,
         {
           headers: {
