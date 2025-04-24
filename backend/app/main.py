@@ -26,10 +26,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.options("/upload/")
-async def options_upload():
-    return {"message": "Options request handled"}
-
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
