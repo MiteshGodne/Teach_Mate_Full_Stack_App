@@ -14,6 +14,10 @@ from .utils.video_creator import create_video_from_images_and_audio
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {"message": "Backend is working"}
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],  # React frontend
