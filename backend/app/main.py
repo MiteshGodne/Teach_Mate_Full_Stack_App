@@ -14,13 +14,22 @@ from .utils.video_creator import create_video_from_images_and_audio
 
 app = FastAPI()
 
+@app.get("/")
+async def root():
+    return {"message": "Welcome, This is Teach Mate"}
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://teach-mate-full-stack-app.vercel.app"],  # React frontend
+    allow_origins=["https://teach-mate-full-stack-app.vercel.app/"],  # React frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.options("/upload/")
+async def options_upload():
+    return {"message": "Options request handled"}
+
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
@@ -38,4 +47,6 @@ async def upload_ppt(file: UploadFile = File(...)):
     video_path = create_video_from_images_and_audio(slide_image_files, audio_files, file_id)
 
     return FileResponse(video_path, media_type="video/mp4", filename="lecture.mp4")
+
+
 
