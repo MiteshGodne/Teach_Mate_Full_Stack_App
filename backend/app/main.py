@@ -20,7 +20,7 @@ async def root():
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://teach-mate-full-stack-app.vercel.app/"],  # React frontend
+    allow_origins=["https://teach-mate-full-stack-app.vercel.app/upload"],  # React frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
