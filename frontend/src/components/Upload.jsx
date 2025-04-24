@@ -2,8 +2,6 @@ import "../css/Upload.css";
 import { useState } from "react";
 import axios from "axios";
 
-const apiBaseFrontendUrl = import.meta.env.VITE_API_URL + "/upload";
-
 const Upload = () => {
   const [file, setFile] = useState(null);
   const [dragActive, setDragActive] = useState(false);
@@ -54,7 +52,7 @@ const Upload = () => {
     setIsUploaded(false); // Reset uploaded state
 
     try {
-      const response = await axios.post(apiBaseFrontendUrl,
+      const response = await axios.post("https://teach-mate-full-stack-app.vercel.app/upload",
         formData,
         {
           headers: {
