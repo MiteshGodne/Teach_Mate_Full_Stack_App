@@ -13,18 +13,14 @@ from .utils.video_creator import create_video_from_images_and_audio
 
 
 app = FastAPI()
-origins = ["https://teach-mate-full-stack-app.vercel.app"],
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # React frontend
+    allow_origins=["https://teach-mate-full-stack-app.vercel.app"],  # React frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-# @app.get("/")
-# async def root():
-#     return {"message" : "Welcome to the functional backend of Teach Mate"}
-
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
