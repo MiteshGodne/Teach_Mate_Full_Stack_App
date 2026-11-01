@@ -52,7 +52,7 @@ const Upload = () => {
     setIsUploaded(false); // Reset uploaded state
 
     try {
-      const response = await axios.post("https://teach-mate-backend-e645.onrender.com/upload/",
+      const response = await axios.post("http://127.0.0.1:8000/upload",
         formData,
         {
           headers: {
@@ -141,15 +141,15 @@ const Upload = () => {
       )}
 
       {isUploaded && videoUrl && (
-        <div>
+        <div className="video-render">
           <h2>Video Generated!</h2>
           <video controls>
             <source src={videoUrl} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <a href={videoUrl} download="generated_video.mp4">
-            Download Video
-          </a>
+           <button className="down">
+            <a href={videoUrl} download="generated_video.mp4">Download Video</a>
+            </button>
         </div>
       )}
     </div>

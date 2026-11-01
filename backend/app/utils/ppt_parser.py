@@ -1,4 +1,3 @@
-# app/utils/ppt_parser.py
 from pptx import Presentation
 
 def extract_ppt_content(file_path):

@@ -9,7 +9,7 @@ function Home() {
       <p>Save PPT as MP4 Effortlessly with Teach-mate.</p>
       <div className="button-container">
         <Link to="/upload" className="button btn btn-primary">Get Started</Link>
-        <button className="button btn-secondary btn">Learn More</button>
+        {/* <button className="button btn-secondary btn" href="">Learn More</button> */}
       </div>
 
       <div className="hero">

@@ -2,14 +2,9 @@ import "../css/About.css";
 
 const teamMembers = [
   {
-    name: "John Doe",
-    role: "CEO",
+    name: "Lokesh Singh Chauhan",
+    role: "Developer",
     image: "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?q=80&w=2334&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    name: "Sarah Lee",
-    role: "Designer",
-    image: "https://images.unsplash.com/photo-1700913015629-fa6d95da9d4e?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -27,7 +22,7 @@ const About = () => {
 
       {/* Team Section */}
       <section className="team-section">
-        <h2>Meet Our Team</h2>
+        <h2></h2>
         <div className="team-grid">
           {teamMembers.map((member, index) => (
             <div className="team-member" key={index}>
